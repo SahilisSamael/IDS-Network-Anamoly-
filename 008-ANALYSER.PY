@@ -32,6 +32,8 @@ for f in files:
         fx.close()
         data = ((lines[0]).split(","))
         print(data)
+        print(data[0])
+        print(data[1])
         mytype=data[0]
         myname=data[1]
 
