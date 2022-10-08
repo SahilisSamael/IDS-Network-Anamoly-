@@ -28,7 +28,7 @@ for f in files:
     if f.endswith("xyz") :
         print(f)
         fx=open(f)
-        lines=fx.readline()
+        lines=fx.readlines()
         fx.close()
         data = ((lines[0]).split(","))
         print(data)
