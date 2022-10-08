@@ -36,7 +36,7 @@ def getConnection():
 			#print ()proc
 			#print(str(cons.pid)), ",", str(cons.laddr.in), ",", str(cons.laddr.port), str(cons.raddr).replace("()",",,")
 			#output += str(proc.pid), proc.name(), ....
-			output += str(cons.pid) + "," +str(cons.status) + "," + str(cons.laddr.ip) + "," + str(cons.laddr.port) + "," +  ( (str(cons.raddr).replace("()",",,")).replace("()",",,"))
+			output += str(cons.pid) + "," +str(cons.status) + "," + str(cons.laddr.ip) + "," + str(cons.laddr.port) + "," +  ( (str(cons.raddr).replace("()",",,")).replace("()",",,")) + "\n"
 		except (psutil.NoSuchProcess, psutil.AccessDenied, psutil.ZombieProcess):
 			pass
 	return output
@@ -49,7 +49,7 @@ def getSystem():
 	output += "architecture," + platform.machine() + "\n"
 	output += "hostname," + socket.gethostname() + "\n"
 	output += "ip-address," + socket.gethostbyname(socket.gethostname()) + "\n"
-	output += "mac-address" + ':'.join(re.findall('..', '%012x' % uuid.getnode())) + "\n"
+	output += "mac-address," + ':'.join(re.findall('..', '%012x' % uuid.getnode())) + "\n"
 			
 	output += "processor," + (platform.processor()).replace(","," ") + "\n"		
 	output += "ram,"+ str(round(psutil.virtual_memory().total / (1024.0 **3))) + "\n"		

@@ -29,11 +29,12 @@ for f in files:
         print(f)
         fx=open(f)
         lines=fx.readlines()
+        # print(lines)
         fx.close()
         data = ((lines[0]).split(","))
-        print(data)
-        print(data[0])
-        print(data[1])
+        # print(data)
+        # print(data[0])
+        # print(data[1])
         mytype=data[0]
         myname=data[1]
 
